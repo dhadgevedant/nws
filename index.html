@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Tailwind --> 
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+    
+    <style>
+        *{
+            overflow-x: hidden;
+        }
+        h1{
+            overflow: hidden;
+            padding: 0.5rem;
+        }
+        div{
+            overflow: hidden;
+
+        }
+        
+    </style>
+    
+    <title>Pompt Tooling</title>
+
+</head>
+<body class="scroll-smooth overflow-hidden flex flex-col bg-white text-black p-2 justify-center items-center overflow-x-hidden">
+
+<!-- nav -->
+<div 
+    class=" flex flex-row bg-transparent backdrop-blur-sm z-50
+            justify-between items-center
+            border border-black rounded-lg
+            fixed top-4 p-0 px-4 w-10/12">
+
+            <!-- <img src="images/logo.avif" class=" size-8  " alt="Prompt"> -->
+            <h1 class="transition-all duration-300 ease-out text-3xl py-4 font-thin"><i>Company</i></h1>
+
+            <div class=" hidden lg:flex flex-row items-center justify-center gap-8 px-4">
+                <!-- <a href="#" class="hover:scale-150 transition-all duration-300 ease-out text-2xl py-4">Home</a> -->
+                <a href="#" class="hover:scale-150 transition-all duration-300 ease-out text-xl py-4">About</a>
+                <!-- <a href="pages/products.html" class="hover:scale-150 transition-all duration-300 ease-out text-xl py-4">Products</a> -->
+                <a href="#contactSection" class="hover:scale-150 transition-all duration-300 ease-out text-xl py-4">Contact</a>
+            </div>
+
+
+
+            <button id="menuButton" class="lg:hidden p-2">
+                <!-- Hamburger Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+</div>
+
+<!-- menu -->
+<div id="menu" class="fixed top-0 right-0 h-full z-40 
+text-black bg-transparent backdrop-blur-xl w-64 transform
+translate-x-full menu-transition  transition-all ease-out
+duration-800 border-l border-black">
+    <div class="flex flex-col items-center justify-center h-full">
+        <!-- <a href="#" class="hover:scale-150 transition-all duration-300 ease-out text-2xl py-4">Home</a> -->
+        <a href="#" class="hover:scale-150 transition-all duration-300 ease-out text-2xl py-4">About</a>
+        <!-- <a href="pages/products.html" class="hover:scale-150 transition-all duration-300 ease-out text-2xl py-4">Products</a> -->
+        <a href="#contactSection" class="hover:scale-150 transition-all duration-300 ease-out text-2xl py-4">Contact</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- landing -->
+<div class="relative h-[100vh] flex items-center flex-col justify-center overflow-hidden">
+
+    <!-- Prompt Section -->
+    <div id="prompt" class="transform transition-all duration-300 ease-out ">
+        <h1 class="text-center text-7xl sm:text-8xl  font-thin text-black overflow-y-hidden w-screen h-fit">Company</h1>
+    </div>
+
+    <!-- Tool Section -->
+    <div id="tool" class="transform transition-all duration-300 ease-out">
+        <h1 class="text-center text-7xl sm:text-8xl  font-thin text-black overflow-y-hidden w-screen h-fit">Name</h1>
+    </div>
+
+    <p class="m-8 text-center sm:max-w-[900px] max-w-96">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis iusto necessitatibus ab animi nam aspernatur sequi sapiente cumque ad voluptas? Officia libero aut qui vitae nam ipsam nisi veniam fugit.</p>
+
+    <div class=" absolute bottom-10 flex w-full flex-row items-center justify-center p-10 md:gap-4 gap-2">
+        <!-- <Button class=" w-1/2 max-w-96  rounded-lg p-2
+         md:hover:bg-black  md:text-black md:hover:text-white md:bg-white
+         hover:bg-white hover:text-black text-white bg-black
+         border-2 border-black
+         md:border-none
+         
+         hover:scale-125 transition-all duration-300 ease-out " id="landingContact">
+        <a href="#contactSection" ><h1 class="text-sm sm:text-2xl ">Get in touch </h1></a>    
+        </Button> -->
+        <Button class=" w-1/2 max-w-96  rounded-lg p-2 gap-2
+         md:hover:bg-black  md:text-black md:hover:text-white md:bg-white
+         hover:bg-white hover:text-black text-white bg-black
+         border-2 border-black
+         md:border-none
+         
+         hover:scale-125 transition-all duration-300 ease-out " id="landingContact">
+        <a href="pages/products.html"><h1 class="text-center text-sm sm:text-2xl  ">Grow your business</h1></a>  
+        </Button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- slider -->
+<div class="h-[300vh] w-fit p-10 m-10 flex flex-row items-start overflow-x-hidden  overflow-y-hidden" id="slider">
+    
+    
+    <span class="flex flex-row items-start justify-start  overflow-hidden">
+       
+        <div class="flex flex-col  items-left justify-center px-4 w-[90vw] h-screen">
+            <h1 class="text-7xl sm:text-8xl md:text-9xl font-thin text-black ">How-to guides</h1>
+            <br>
+            <p class="text-2xl text-black"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque voluptas laudantium aliquid? Molestiae, quibusdam repellendus.</p>
+        </div>
+        <div class="flex flex-col items-left justify-center px-4 w-[90vw] h-screen ">
+            <h1 class="text-7xl sm:text-8xl md:text-9xl font-thin text-black">premium content</h1>
+            <br>
+            <p class="text-2xl text-black"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam quam nihil minus saepe porro eos!</p>
+        </div>
+        <div class="flex flex-col items-left justify-center px-4 w-[90vw] h-screen ">
+            <h1 class="text-7xl sm:text-8xl md:text-9xl font-thin text-black">grow</h1>
+            <br>
+            <p class="text-2xl text-black"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima consectetur, fuga repellat distinctio aut excepturi.</p>
+        </div>
+
+</span>
+</div>
+
+
+
+<!-- 
+<div class="h-screen w-screen  py-2 p-4 ">
+    <h1 class="text-center text-6xl sm:text-7xl  font-thin text-black overflow-y-hidden w-screen h-fit">What We Are</h1>
+
+    <div class="grid grid-cols-6 grid-rows-6 gap-4 p-4 h-11/12">
+        <div class="col-span-6 row-span-1 sm:col-span-4 sm:row-span-3 border border-black rounded-lg flex flex-col justify-center items-center p-1 sm:p-16">
+            <h1 class="text-center text-4xl sm:text-5xl  font-thin text-black overflow-y-hidden w-screen h-fit">Our Vision</h1>
+            <p class="text-center">To be a leading solution provider to Indian Industry in the field of metal cutting.</p>
+
+        </div>
+        <div class="col-span-6 row-span-3 sm:col-span-2 sm:row-span-6 border border-black rounded-lg flex flex-col justify-center items-center p-1 px-2 sm:p-16">
+            <h1 class="text-center text-4xl sm:text-5xl  font-thin text-black overflow-y-hidden w-screen h-fit sm:mb-4">Guiding Principles</h1>
+
+            <div class="text-center flex flex-col  sm:gap-4 justify-start">
+                <p class="sm:border rounded-lg sm:p-4 p-1 ">Customer is the most important element of business chain, treat him with sense of priority.</p>
+            
+            
+                <p class="sm:border rounded-lg sm:p-4 p-1 ">Our people is our strength.</p>
+            
+                <p class="sm:border rounded-lg sm:p-4 p-1 ">With Leadership comes responsibility.</p>
+            
+                <p class="sm:border rounded-lg sm:p-4 p-1 ">Integrity is the only way to have long term success</p>
+
+            </div>
+        </div>
+        <div class="col-span-6 row-span-2 sm:col-span-4 sm:row-span-3 border border-black rounded-lg flex flex-col justify-center items-center p-1 sm:p-16">
+            <h1 class="text-center text-4xl sm:text-5xl  font-thin text-black overflow-y-hidden w-screen h-fit">Our Mission</h1>
+            
+            <p class="text-center">Exceed customer expectations by providing right solution with the most effective manner and promptness, to ensure they will succeed.</p>
+        
+        </div>
+
+    </div>
+     -->
+    
+    
+    
+    
+    
+    <!-- 
+
+
+
+    
+    <h1 class="text-center text-4xl sm:text-5xl  font-thin text-black overflow-y-hidden w-screen h-fit">Guiding Principles</h1>
+
+    <p class="text-center">Customer is the most important element of business chain, treat him with sense of priority.</p>
+
+    <p class="text-center">Keep Learning it is the basic of excellence.</p>
+
+    <p class="text-center">Our people is our strength.</p>
+
+    <p class="text-center">With Leadership comes responsibility.</p>
+
+    <p class="text-center">Integrity is the only way to have long term success</p> -->
+
+</div>
+
+
+<!-- <div id="contactSection" class="h-screen w-screen flex flex-col md:flex-row justify-between md:items-center items-end p-4 md:p-24 gap-4 md:gap-8"> 
+
+
+    <div class="bg-black rounded-lg w-full md:w-1/2 md:h-10/12 h-4/12"> 
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30153.67302922563!2d74.6745821285925!3d19.1423209731472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdcba25e436562d%3A0xda1bfa9fc085fb73!2sp%2C%2040%2C%20MIDC%2C%20Ahilya%20Nagar%2C%20Nalegaon%2C%20Maharashtra%20414111!5e0!3m2!1sen!2sin!4v1744251820698!5m2!1sen!2sin"
+          class="rounded-xl backdrop-grayscale h-full w-full" style="filter: grayscale(100%) invert(92%) contrast(83%);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"  allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="bg-white rounded-lg w-full md:w-1/2 h-10/12 flex flex-col justify-start">
+       
+        <div class="h-fit">
+            <h1 class="text-2xl ">
+                AHMEDNAGAR
+            </h1>
+            <div class="px-2"><p>
+                    P 40 M.I.D.C. Ahmednagar 414111.
+                    Telephone:+91 XXXX XXXXXX
+                </p>
+            </div>
+            
+        </div>
+
+        <div class="h-fit">
+            <h1 class="text-2xl mt-2">
+                Have any Questions?
+            </h1>
+            <input type="text" placeholder="Name"
+            class=" bg-black text-white focus:bg-white focus:text-black
+            border border-black rounded-lg p-2 w-full md:w-3/4 h-fit mb-1"></input>
+            <br>
+            <input type="email" placeholder="Email" class="
+            bg-black text-white focus:bg-white focus:text-black
+            border border-black rounded-lg p-2 w-full md:w-3/4  h-fit mb-1"></input>
+            
+            <input type="text" placeholder="your question" class="
+            bg-black text-white focus:bg-white focus:text-black
+            border border-black rounded-lg p-2 w-full md:w-3/4  h-fit"></input>
+            <br>
+            <input type="button" value="enquire"
+            class="p-2 w-1/4 text-black border border-black rounded-lg my-4 cursor-pointer hover:bg-white hover:text-black"
+            onclick="sendEmail()">
+
+        </div>    
+    </div>
+
+
+</div> -->
+
+
+
+
+
+<div class=" bg-black text-white w-[100vw] h-fit overflow-hidden">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between md:items-center items-start p-4 ">
+
+        <div class="flex flex-col space-x-4 mt-4 md:mt-0">
+            <p>Developed by Vedant Dhadge</p>
+            <p>dhadgevedant@gmail.com</p>
+        </div>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>
